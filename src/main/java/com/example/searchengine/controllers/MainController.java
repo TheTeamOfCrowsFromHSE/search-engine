@@ -12,6 +12,6 @@ public class MainController {
     public String home(@RequestParam(name="string", required=false) String string, Model model) {
         model.addAttribute("title", "Search Engine");
         model.addAttribute("string", string);
-        return "home";
+        return "index";
     }
 }
