@@ -47,7 +47,7 @@ public class MeiliSearch {
         json = words.stream()
                 .map(x -> {
                     try {
-                        return client.index("test").search(x).getHits();
+                        return client.index("movies").search(x).getHits();
                     } catch (Exception e) {
                         throw new RuntimeException();
                     }
