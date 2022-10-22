@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class SearchLogic {
-
+    SearchLogic() {}
     public static List<String> searchRequestDivision(String sentence) {
         String numPattern = "[0-9]+[\\\\.]?[0-9]*";
         List<String> dividedSentence = Arrays.asList(sentence.split(" "));
