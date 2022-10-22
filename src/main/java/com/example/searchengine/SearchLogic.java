@@ -1,12 +1,25 @@
 package com.example.searchengine;
 
+import com.example.searchengine.search.SearchDTO;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
 public class SearchLogic {
-    SearchLogic() {}
+    private List<String> words;
+
+    public List<String> getWords() {
+        return words;
+    }
+    public void setWords(List<String> words) {
+        this.words = words;
+    }
+    public SearchLogic(SearchDTO searchDTO) {
+        words = searchRequestDivision(searchDTO.getQ());
+        words = searchSampling(words);
+    }
     public static List<String> searchRequestDivision(String sentence) {
         String numPattern = "[0-9]+[\\\\.]?[0-9]*";
         List<String> dividedSentence = Arrays.asList(sentence.split(" "));
