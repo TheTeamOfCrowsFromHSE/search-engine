@@ -39,11 +39,9 @@ public class SearchController {
     @PostMapping("/indexes/movies/search")
     ResponseEntity<OurSearchResult> newSearchDTO(@RequestBody() SearchDTO searchDTO) throws Exception {
         ArrayList<HashMap<String, Object>> array = new ArrayList<>();
-        if (!searchDTO.getQ().isEmpty()) {
-            SearchLogic searchLogic = new SearchLogic(searchDTO);
-            MeiliSearch meiliSearch = new MeiliSearch(searchLogic.getWords());
-            array.addAll(meiliSearch.json);
-        }
+        SearchLogic searchLogic = new SearchLogic(searchDTO);
+        MeiliSearch meiliSearch = new MeiliSearch(searchLogic.getWords(), searchDTO.getQ().isEmpty());
+        array.addAll(meiliSearch.json);
         OurSearchResult sr = new OurSearchResult(array);
         return ResponseEntity.ok(sr);
     }

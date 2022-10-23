@@ -20,6 +20,8 @@ public class MeiliSearch {
     public static Client client = new Client(new Config("http://127.0.0.1:7700", "masterkey"));
     private static List<String> words;
 
+    private boolean requestIsEmpty;
+
     public List<HashMap<String, Object>> json;
     private Long id;
 
@@ -27,23 +29,30 @@ public class MeiliSearch {
 
     public MeiliSearch() {}
 
-    public MeiliSearch(List<String> words) throws Exception {
+    public MeiliSearch(List<String> words, boolean requestIsEmpty) throws Exception {
         Path filePath = Path.of(fileName);
 //        String moviesJson = Files.readString(filePath);
 //        Index index = client.index("movies");
 //        index.addDocuments(moviesJson);
 
-        this.words = words;
-        json = words.stream()
-                .map(x -> {
-                    try {
-                        return client.index("movies").search(x).getHits();
-                    } catch (Exception e) {
-                        throw new RuntimeException();
-                    }
-                })
-                .flatMap(Collection::stream)
-                .toList();
+        if (!requestIsEmpty) {
+            this.words = words;
+            json = words.stream()
+                    .map(x -> {
+                        try {
+                            return client.index("movies").search(x).getHits();
+                        } catch (Exception e) {
+                            throw new RuntimeException();
+                        }
+                    })
+                    .flatMap(Collection::stream)
+                    .toList();
+        } else {
+            json = client.index("movies").search("").getHits();
+
+
+
+        }
     }
 
     public void setId(Long id) {
