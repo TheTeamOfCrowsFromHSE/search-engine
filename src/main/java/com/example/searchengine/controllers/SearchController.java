@@ -3,6 +3,7 @@ package com.example.searchengine.controllers;
 import com.example.searchengine.SearchLogic;
 import com.example.searchengine.meilisearch.MeiliSearch;
 import com.example.searchengine.search.SearchDTO;
+import com.meilisearch.sdk.model.SearchResult;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -27,11 +28,15 @@ public class SearchController {
 //        return ResponseEntity.ok(meiliSearch.json);
 //    }
 
-    @GetMapping("/search") ResponseEntity<List<HashMap<String, Object>>> newSearchDTO(@RequestParam(value = "text") String text) throws Exception {
-        SearchDTO searchDTO = new SearchDTO(text);
-        SearchLogic searchLogic = new SearchLogic(searchDTO);
-        MeiliSearch meiliSearch = new MeiliSearch(searchLogic.getWords());
-        System.out.println(text);
-        return ResponseEntity.ok(meiliSearch.json);
+    @PostMapping("/indexes/movies/search")
+//    ResponseEntity<List<HashMap<String, Object>>> newSearchDTO(@RequestParam(value = "q") String q) throws Exception {
+      ResponseEntity<SearchResult> newSearchDTO(@RequestBody() SearchDTO searchDTO) throws Exception {
+        return ResponseEntity.ok(MeiliSearch.client.index("movies").search(searchDTO.getQ()));
+//        SearchDTO searchDTO = new SearchDTO(q);
+//        SearchLogic searchLogic = new SearchLogic(searchDTO);
+//        MeiliSearch meiliSearch = new MeiliSearch(searchLogic.getWords());
+//        System.out.println(q);
+//        return ResponseEntity.ok(meiliSearch.json);
     }
+
 }
