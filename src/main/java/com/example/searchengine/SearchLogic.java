@@ -22,7 +22,7 @@ public class SearchLogic {
     }
     public static List<String> searchRequestDivision(String sentence) {
         String numPattern = "[0-9]+[\\\\.]?[0-9]*";
-        List<String> dividedSentence = Arrays.asList(sentence.split(" "));
+        List<String> dividedSentence = new ArrayList<String>(Arrays.asList(sentence.split(" ")));
         for (int i = 0; i < dividedSentence.size(); i++) {
             if (dividedSentence.get(i).length() < 3 && !Pattern.matches(numPattern, dividedSentence.get(i))) {
                 dividedSentence.remove(i);
