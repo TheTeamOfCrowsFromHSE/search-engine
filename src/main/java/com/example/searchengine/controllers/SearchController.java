@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -28,10 +29,12 @@ public class SearchController {
 //    }
 
     @GetMapping("/search") ResponseEntity<List<HashMap<String, Object>>> newSearchDTO(@RequestParam(value = "text") String text) throws Exception {
-        SearchDTO searchDTO = new SearchDTO(text);
-        SearchLogic searchLogic = new SearchLogic(searchDTO);
-        MeiliSearch meiliSearch = new MeiliSearch(searchLogic.getWords());
-        System.out.println(text);
-        return ResponseEntity.ok(meiliSearch.json);
+        if (!text.isEmpty()) {
+            SearchDTO searchDTO = new SearchDTO(text);
+            SearchLogic searchLogic = new SearchLogic(searchDTO);
+            MeiliSearch meiliSearch = new MeiliSearch(searchLogic.getWords());
+            return ResponseEntity.ok(meiliSearch.json);
+        }
+        return ResponseEntity.ok(new ArrayList<>());
     }
 }
