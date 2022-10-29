@@ -119,6 +119,6 @@ If everything went well, you will see the cards:
 [🔝Table of contents](#table-of-contents)
 
 # The License
-`search-engine` is distributed under the [MIT License](#https://github.com/TheTeamOfCrowsFromHSE/search-engine/blob/main/LICENSE), on behalf of TheTeamOfCrowsFromHSE.
+`search-engine` is distributed under the [MIT License](https://github.com/TheTeamOfCrowsFromHSE/search-engine/blob/main/LICENSE), on behalf of TheTeamOfCrowsFromHSE.
 
 [🔝Table of contents](#table-of-contents)
