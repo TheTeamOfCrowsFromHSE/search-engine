@@ -1,6 +1,6 @@
 # search-engine — the mechanism for searching for products on the supplier's portal
 > ## Prehistory
-> On November 21-23, the "Thunder Hack" hackathon was held in our city and we, 
+> On November 21-23 2022, the "Thunder Hack" hackathon was held in our city and we, 
 > 5 students from the HSE university, joined a team and went to participate in this event. 
 > We were tasked with developing `a search engine mechanism on the supplier's portal`.
 
