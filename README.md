@@ -8,7 +8,7 @@
 
 # Table of contents
 - [The problem and the data provided](#the-problem-and-the-data-provided)
-- [Solution / Result / Features](#solution-/-result-/-features)
+- [Solution_Features_Result](#solution_features_result)
 - [Installation](#installation)
 - [The License](#the-license)
 
@@ -20,7 +20,7 @@
 
 [🔝Table of contents](#table-of-contents)
 
-# Solution / Result / Features
+# Solution_Features_Result
 - Solution: In our solution we used [`meilisearch`](#https://github.com/meilisearch/meilisearch) library, which helps us to do search.  
   - We have :
     - frontend on `HTML`,`CSS`,`JavaScript -> ReactJS` 
@@ -34,14 +34,23 @@
   - search with multiple errors
 - Result (demonstration of multiple requests) :
   - Request -> `бекант письменный стол` (small register)
+  
   ![](./docs/gifs/1.gif)
+  
   - Request -> `jump мяч волейбольный` (contains different languages)
+  
   ![](./docs/gifs/2.gif)
+  
   - Request -> `ЭлЕктРоГитаРа` (random register)
+  
   ![](./docs/gifs/3.gif)
+  
   - Request -> `ЕФРОСИНА ЛИТЕРАТУРА` (large register and errors in spelling of last name)
+  
   ![](./docs/gifs/4.gif)
+  
   - Request -> `шлогбауум` (several errors)
+  
   ![](./docs/gifs/5.gif)
 
 
