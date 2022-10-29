@@ -13,13 +13,16 @@ public class SearchLogic {
     public List<String> getWords() {
         return words;
     }
+
     public void setWords(List<String> words) {
         this.words = words;
     }
+
     public SearchLogic(SearchDTO searchDTO) {
         words = searchRequestDivision(searchDTO.getQ());
         words = searchSampling(words);
     }
+
     public static List<String> searchRequestDivision(String sentence) {
         String numPattern = "[0-9]+[\\\\.]?[0-9]*";
         List<String> dividedSentence = new ArrayList<String>(Arrays.asList(sentence.split(" ")));
@@ -41,7 +44,7 @@ public class SearchLogic {
         }
         for (int i = 0; i < dividedSentence.size(); i++) {
             if (!Pattern.matches(numPattern, dividedSentence.get(i)))
-            wordsSampling.add(dividedSentence.get(i));
+                wordsSampling.add(dividedSentence.get(i));
         }
         return wordsSampling;
     }

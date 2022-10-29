@@ -7,7 +7,8 @@ import javax.persistence.Id;
 @Entity
 public
 class SearchDTO {
-    private @Id @GeneratedValue Long id;
+    private @Id
+    @GeneratedValue Long id;
     private String q;
 
     public SearchDTO() {}
