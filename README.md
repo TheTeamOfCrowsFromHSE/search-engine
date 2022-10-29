@@ -24,7 +24,7 @@
 - Solution: In our solution we used [`meilisearch`](#https://github.com/meilisearch/meilisearch) library, which helps us to do search.  
   - We have :
     - frontend on `HTML`,`CSS`,`JavaScript -> ReactJS` 
-    - backend on `Java`
+    - backend on `Java -> Spring Framework`
     - convertor `.xlsx` to `json` on `Python`
   - Solution scheme :
     ![](./docs/images/2.png)
