@@ -26,8 +26,9 @@
     - frontend on `HTML`,`CSS`,`JavaScript -> ReactJS` 
     - backend on `Java -> Spring Framework`
     - convertor `.xlsx` to `json` on `Python`
-  - Solution scheme :
-    ![](./docs/images/2.png)
+  - Solution scheme : 
+  
+  ![](./docs/images/2.png)
 - Features :
   - real-time search
   - any(random) register of characters
