@@ -8,7 +8,7 @@
 
 # Table of contents
 - [The problem and the data provided](#the-problem-and-the-data-provided)
-- [Solution_Features_Result](#solution_features_result)
+- [Solution / Features / Result](#solution--features--result)
 - [Installation](#installation)
 - [The License](#the-license)
 
@@ -20,7 +20,7 @@
 
 [🔝Table of contents](#table-of-contents)
 
-# Solution_Features_Result
+# Solution / Features / Result
 - Solution: In our solution we used [`meilisearch`](#https://github.com/meilisearch/meilisearch) library, which helps us to do search.  
   - We have :
     - frontend on `HTML`,`CSS`,`JavaScript -> ReactJS` 
