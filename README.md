@@ -42,7 +42,7 @@
   
   ![](./docs/gifs/2.gif)
   
-  - Request -> `ЭлЕкТроГИтаРа` (random register)
+  - Request -> `ЭлЕкТроГИтара` (random register)
   
   ![](./docs/gifs/3.gif)
   
